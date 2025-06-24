@@ -27,16 +27,15 @@ body {
 }
 
 .main-card {
-    width: 900px;
-    height: 650px;
+    width: 1000px;
+    height: 700px;
     position: relative;
-    background-image: url('Card_BG.png');
+    background-image: url('Casino_Table.png');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transform: rotate(-2deg);
 }
 
 /* Add subtle pattern overlay */
@@ -47,23 +46,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('SquareBG.png');
-    background-repeat: repeat;
-    background-size: 30px;
-    opacity: 0.1;
+    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%);
     z-index: 1;
 }
 
 /* Main headline - the missing "¡OFERTA EXCLUSIVA!" */
 .main-headline {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 900;
     color: #ffd700;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
     z-index: 15;
     white-space: nowrap;
     letter-spacing: 2px;
@@ -72,13 +68,13 @@ body {
 /* Registration text */
 .registration-text {
     position: absolute;
-    top: 110px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     z-index: 14;
     white-space: nowrap;
 }
@@ -86,26 +82,26 @@ body {
 /* 3D Character - positioned on the left */
 .pan-image {
     position: absolute;
-    bottom: -30px;
-    left: -80px;
-    height: 450px;
+    bottom: 0px;
+    left: 50px;
+    height: 400px;
     width: auto;
     object-fit: contain;
     z-index: 10;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
 }
 
 /* Claim bonus button */
 .claim-button {
     position: absolute;
-    top: 160px;
+    top: 140px;
     left: 50%;
     transform: translateX(-50%);
-    width: 260px;
-    height: 70px;
+    width: 250px;
+    height: 60px;
     background: linear-gradient(145deg, #ffd700, #ffed4e);
     color: #000;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 900;
     border: none;
     border-radius: 15px;
@@ -113,7 +109,7 @@ body {
     text-align: center;
     line-height: 1.2;
     z-index: 13;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
 }
 
@@ -124,25 +120,25 @@ body {
 /* Right side content container */
 .right-content {
     position: absolute;
-    top: 250px;
-    right: 60px;
-    width: 280px;
+    top: 220px;
+    right: 80px;
+    width: 300px;
     z-index: 12;
 }
 
 /* Get spins button */
 .get-spins-button {
     width: 100%;
-    height: 60px;
+    height: 55px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 900;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
 }
 
@@ -154,15 +150,15 @@ body {
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .step-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     color: white;
-    font-size: 1em;
+    font-size: 0.95em;
     font-weight: bold;
 }
 
@@ -170,54 +166,54 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 900;
     border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .step-text {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-size: 0.95em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-size: 0.9em;
 }
 
-/* Floating coins - adjusted positioning */
+/* Floating coins - better positioned to avoid overlaps */
 .coins-left {
     position: absolute;
-    top: 80px;
-    left: -20px;
-    height: 160px;
+    top: 60px;
+    left: 20px;
+    height: 140px;
     object-fit: contain;
     z-index: 8;
     transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .coins-right {
     position: absolute;
-    top: 120px;
-    right: -10px;
-    height: 120px;
+    top: 100px;
+    right: 20px;
+    height: 100px;
     object-fit: contain;
     z-index: 8;
     transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-/* Bottom feature badges - better spacing */
+/* Bottom feature badges - more space from bottom */
 .icons-bottom {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 80px;
     z-index: 11;
 }
 
@@ -225,18 +221,18 @@ body {
     background: rgba(26, 66, 58, 0.95);
     border: 2px solid #00d970;
     border-radius: 10px;
-    padding: 8px 6px;
+    padding: 10px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: #00d970;
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: bold;
     text-align: center;
-    min-width: 80px;
+    min-width: 85px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
 }
 
@@ -245,8 +241,8 @@ body {
 }
 
 .icon-item img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     filter: brightness(1.2);
 }
@@ -256,10 +252,10 @@ body {
     line-height: 1.1;
 }
 
-/* Social media icons */
+/* Social media icons - moved further down */
 .social-icons {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -268,8 +264,8 @@ body {
 }
 
 .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -285,65 +281,68 @@ body {
     .main-card {
         width: 90vw;
         height: 80vh;
-        transform: rotate(0deg);
     }
     
     .main-headline {
-        font-size: 3em;
+        font-size: 2.8em;
     }
     
     .registration-text {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     
     .right-content {
-        right: 30px;
-        width: 250px;
+        right: 40px;
+        width: 260px;
     }
     
     .pan-image {
-        height: 380px;
-        left: -60px;
+        height: 320px;
+        left: 30px;
+    }
+    
+    .icons-bottom {
+        padding: 0 40px;
     }
 }
 
 @media (max-width: 768px) {
     .main-headline {
-        font-size: 2.4em;
+        font-size: 2.2em;
     }
     
     .registration-text {
-        font-size: 1.1em;
+        font-size: 1em;
     }
     
     .claim-button {
-        width: 220px;
-        height: 60px;
-        font-size: 1.1em;
+        width: 200px;
+        height: 50px;
+        font-size: 1em;
     }
     
     .right-content {
-        right: 15px;
+        right: 20px;
         width: 220px;
     }
     
     .icons-bottom {
-        padding: 0 15px;
+        padding: 0 20px;
     }
     
     .icon-item {
-        min-width: 65px;
-        padding: 6px 4px;
-        font-size: 0.6em;
+        min-width: 70px;
+        padding: 8px 6px;
+        font-size: 0.65em;
     }
     
     .icon-item img {
-        width: 25px;
-        height: 25px;
+        width: 26px;
+        height: 26px;
     }
     
     .pan-image {
-        height: 320px;
-        left: -40px;
+        height: 280px;
+        left: 20px;
     }
 } 

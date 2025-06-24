@@ -1,157 +1,319 @@
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
+    min-height: 100vh;
     overflow: hidden;
-    font-family: Arial, sans-serif;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
-    background-image: url('BGLandPage.png');
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
 }
 
 .main-card {
-    background-image: url('Card_BG.png');
-    background-size: cover;
-    background-position: center;
-    width: 800px; /* Adjust as needed */
-    height: 600px; /* Adjust as needed */
-    border-radius: 20px;
+    width: 900px;
+    height: 650px;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    overflow: hidden; /* Ensure content stays within bounds */
+    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: rotate(-2deg);
 }
 
-.main-card::before {
-    content: '';
+/* Main headline - the missing "¡OFERTA EXCLUSIVA!" */
+.main-headline {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('SquareBG.png');
-    background-repeat: repeat;
-    background-size: 20px; /* Adjust size of the pattern as needed */
-    opacity: 0.1; /* Adjust opacity as needed */
-    z-index: 1;
-}
-
-.main-title {
-    position: absolute;
-    top: 30px; /* Adjust as needed */
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 650px; /* Adjust as needed */
+    font-size: 4.5em;
+    font-weight: 900;
+    color: #ffd700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    z-index: 15;
+    white-space: nowrap;
+    letter-spacing: 2px;
 }
 
-.claim-button {
+/* Registration text */
+.registration-text {
     position: absolute;
-    top: 120px; /* Adjust as needed */
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
-    width: 350px; /* Adjust as needed */
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 14;
+    white-space: nowrap;
 }
 
+/* 3D Character - positioned on the left */
 .pan-image {
     position: absolute;
-    bottom: -150px; /* Adjust to move down */
-    left: -100px; /* Adjust to move further left */
-    height: 120%; /* Make it taller than the card */
+    bottom: -50px;
+    left: -100px;
+    height: 500px;
+    width: auto;
     object-fit: contain;
-    z-index: 2; /* Ensure it's below the coins */
+    z-index: 10;
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
 }
 
+/* Claim bonus button */
+.claim-button {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 80px;
+    background: linear-gradient(145deg, #ffd700, #ffed4e);
+    color: #000;
+    font-size: 1.4em;
+    font-weight: 900;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 13;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.claim-button:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Right side content container */
+.right-content {
+    position: absolute;
+    top: 280px;
+    right: 80px;
+    width: 320px;
+    z-index: 12;
+}
+
+/* Get spins button */
 .get-spins-button {
-    position: absolute;
-    top: 250px; /* Adjust as needed */
-    right: 30px; /* Adjust as needed */
-    width: 280px; /* Adjust as needed */
-    z-index: 10; /* Ensure it's above other elements if necessary */
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(145deg, #00ff7f, #00d970);
+    color: white;
+    font-size: 1.3em;
+    font-weight: 900;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
 }
 
+.get-spins-button:hover {
+    transform: scale(1.05);
+}
+
+/* Steps container */
 .steps {
-    position: absolute;
-    top: 320px; /* Adjust as needed */
-    right: 30px; /* Adjust as needed */
-    text-align: left;
-    color: white; /* Adjust text color */
-    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
+.step-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(145deg, #00ff7f, #00d970);
+    color: white;
+    font-size: 1.4em;
+    font-weight: 900;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .step-text {
-    margin-bottom: 10px;
-    color: #00d970; /* Green color from image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.step-image {
-    display: block;
-    margin-bottom: 10px; /* Space between images */
-    width: 280px; /* Adjust as needed */
-}
-
+/* Floating coins */
 .coins-left {
     position: absolute;
-    top: 100px; /* Adjust as needed */
-    left: 0px; /* Adjust as needed */
-    height: 300px; /* Adjust as needed */
+    top: 50px;
+    left: -50px;
+    height: 200px;
     object-fit: contain;
-    z-index: 5;
+    z-index: 8;
+    transition: transform 0.1s ease-out;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .coins-right {
     position: absolute;
-    top: 200px; /* Adjust as needed */
-    right: 0px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+    top: 150px;
+    right: -30px;
+    height: 150px;
     object-fit: contain;
-    z-index: 5;
+    z-index: 8;
+    transition: transform 0.1s ease-out;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+/* Bottom feature badges */
 .icons-bottom {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
+    padding: 0 60px;
+    z-index: 11;
 }
 
 .icon-item {
-    text-align: center;
-    color: white;
-    font-size: 0.8em;
+    background: rgba(26, 66, 58, 0.9);
+    border: 2px solid #00d970;
+    border-radius: 12px;
+    padding: 12px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+    color: #00d970;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-align: center;
+    min-width: 90px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.icon-item:hover {
+    transform: translateY(-3px);
 }
 
 .icon-item img {
-    width: 40px; /* Adjust as needed */
-    margin-bottom: 5px;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(1.2);
 }
 
+.icon-item p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Social media icons */
 .social-icons {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 20px; /* Space between icons */
+    gap: 25px;
     z-index: 20;
 }
 
 .social-icon {
-    width: 30px; /* Adjust as needed */
-    height: 30px; /* Adjust as needed */
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    filter: brightness(1.1);
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-card {
+        width: 90vw;
+        height: 80vh;
+        transform: rotate(0deg);
+    }
+    
+    .main-headline {
+        font-size: 3.5em;
+    }
+    
+    .registration-text {
+        font-size: 1.5em;
+    }
+    
+    .right-content {
+        right: 40px;
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-headline {
+        font-size: 2.8em;
+    }
+    
+    .registration-text {
+        font-size: 1.2em;
+    }
+    
+    .claim-button {
+        width: 240px;
+        height: 70px;
+        font-size: 1.2em;
+    }
+    
+    .right-content {
+        right: 20px;
+        width: 250px;
+    }
+    
+    .icons-bottom {
+        padding: 0 20px;
+    }
+    
+    .icon-item {
+        min-width: 70px;
+        padding: 8px 4px;
+        font-size: 0.65em;
+    }
+    
+    .icon-item img {
+        width: 28px;
+        height: 28px;
+    }
 } 

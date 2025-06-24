@@ -30,26 +30,28 @@ body {
     width: 1000px;
     height: 700px;
     position: relative;
-    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
+    background-image: url('Card_BG.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Casino table positioned in bottom left behind character */
+/* Casino table positioned in bottom left behind character - moved up */
 .main-card::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 400px;
-    height: 300px;
+    bottom: 80px;
+    left: 50px;
+    width: 350px;
+    height: 250px;
     background-image: url('Casino_Table.png');
     background-size: cover;
     background-position: center;
-    border-radius: 0 20px 0 20px;
+    border-radius: 15px;
     z-index: 2;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Add subtle pattern overlay on top */
@@ -60,7 +62,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 50%, rgba(0,0,0,0.05) 100%);
     z-index: 1;
 }
 
@@ -93,12 +95,12 @@ body {
     white-space: nowrap;
 }
 
-/* 3D Character - positioned on the left, above the casino table */
+/* 3D Character - positioned on the left, moved up above the casino table */
 .pan-image {
     position: absolute;
-    bottom: 0px;
-    left: 50px;
-    height: 400px;
+    bottom: 80px;
+    left: 100px;
+    height: 380px;
     width: auto;
     object-fit: contain;
     z-index: 10;
@@ -298,8 +300,10 @@ body {
     }
     
     .main-card::before {
-        width: 300px;
-        height: 220px;
+        width: 280px;
+        height: 200px;
+        bottom: 60px;
+        left: 40px;
     }
     
     .main-headline {
@@ -316,8 +320,9 @@ body {
     }
     
     .pan-image {
-        height: 320px;
-        left: 30px;
+        height: 300px;
+        left: 80px;
+        bottom: 60px;
     }
     
     .icons-bottom {
@@ -327,8 +332,10 @@ body {
 
 @media (max-width: 768px) {
     .main-card::before {
-        width: 250px;
-        height: 180px;
+        width: 220px;
+        height: 160px;
+        bottom: 50px;
+        left: 30px;
     }
     
     .main-headline {
@@ -366,7 +373,8 @@ body {
     }
     
     .pan-image {
-        height: 280px;
-        left: 20px;
+        height: 250px;
+        left: 60px;
+        bottom: 50px;
     }
 } 

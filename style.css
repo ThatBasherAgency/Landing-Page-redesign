@@ -42,7 +42,7 @@ body {
 .main-card::before {
     content: '';
     position: absolute;
-    bottom: 80px;
+    bottom: 120px;
     left: -20px;
     width: 420px;
     height: 280px;
@@ -98,7 +98,7 @@ body {
 /* 3D Character - positioned at the left boundary, moved up above the casino table */
 .pan-image {
     position: absolute;
-    bottom: 80px;
+    bottom: 120px;
     left: 20px;
     height: 420px;
     width: auto;
@@ -302,7 +302,7 @@ body {
     .main-card::before {
         width: 320px;
         height: 220px;
-        bottom: 60px;
+        bottom: 90px;
         left: -15px;
     }
     
@@ -322,7 +322,7 @@ body {
     .pan-image {
         height: 340px;
         left: 15px;
-        bottom: 60px;
+        bottom: 90px;
     }
     
     .icons-bottom {
@@ -334,7 +334,7 @@ body {
     .main-card::before {
         width: 260px;
         height: 180px;
-        bottom: 50px;
+        bottom: 80px;
         left: -10px;
     }
     
@@ -375,6 +375,6 @@ body {
     .pan-image {
         height: 280px;
         left: 10px;
-        bottom: 50px;
+        bottom: 80px;
     }
 } 

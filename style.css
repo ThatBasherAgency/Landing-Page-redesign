@@ -38,14 +38,14 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Casino table positioned in bottom left behind character - moved up */
+/* Casino table positioned in bottom left behind character - moved to boundary */
 .main-card::before {
     content: '';
     position: absolute;
     bottom: 80px;
-    left: 50px;
-    width: 350px;
-    height: 250px;
+    left: -20px;
+    width: 420px;
+    height: 280px;
     background-image: url('Casino_Table.png');
     background-size: cover;
     background-position: center;
@@ -95,12 +95,12 @@ body {
     white-space: nowrap;
 }
 
-/* 3D Character - positioned on the left, moved up above the casino table */
+/* 3D Character - positioned at the left boundary, moved up above the casino table */
 .pan-image {
     position: absolute;
     bottom: 80px;
-    left: 100px;
-    height: 380px;
+    left: 20px;
+    height: 420px;
     width: auto;
     object-fit: contain;
     z-index: 10;
@@ -300,10 +300,10 @@ body {
     }
     
     .main-card::before {
-        width: 280px;
-        height: 200px;
+        width: 320px;
+        height: 220px;
         bottom: 60px;
-        left: 40px;
+        left: -15px;
     }
     
     .main-headline {
@@ -320,8 +320,8 @@ body {
     }
     
     .pan-image {
-        height: 300px;
-        left: 80px;
+        height: 340px;
+        left: 15px;
         bottom: 60px;
     }
     
@@ -332,10 +332,10 @@ body {
 
 @media (max-width: 768px) {
     .main-card::before {
-        width: 220px;
-        height: 160px;
+        width: 260px;
+        height: 180px;
         bottom: 50px;
-        left: 30px;
+        left: -10px;
     }
     
     .main-headline {
@@ -373,8 +373,8 @@ body {
     }
     
     .pan-image {
-        height: 250px;
-        left: 60px;
+        height: 280px;
+        left: 10px;
         bottom: 50px;
     }
 } 

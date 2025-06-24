@@ -30,23 +30,37 @@ body {
     width: 1000px;
     height: 700px;
     position: relative;
-    background-image: url('Casino_Table.png');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Add subtle pattern overlay */
+/* Casino table positioned in bottom left behind character */
 .main-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 300px;
+    background-image: url('Casino_Table.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 20px 0 20px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+/* Add subtle pattern overlay on top */
+.main-card::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.1) 100%);
     z-index: 1;
 }
 
@@ -79,7 +93,7 @@ body {
     white-space: nowrap;
 }
 
-/* 3D Character - positioned on the left */
+/* 3D Character - positioned on the left, above the casino table */
 .pan-image {
     position: absolute;
     bottom: 0px;
@@ -283,6 +297,11 @@ body {
         height: 80vh;
     }
     
+    .main-card::before {
+        width: 300px;
+        height: 220px;
+    }
+    
     .main-headline {
         font-size: 2.8em;
     }
@@ -307,6 +326,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .main-card::before {
+        width: 250px;
+        height: 180px;
+    }
+    
     .main-headline {
         font-size: 2.2em;
     }

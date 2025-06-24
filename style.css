@@ -9,7 +9,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial Black', Arial, sans-serif;
-    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
+    background-image: url('BGLandPage.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     overflow: hidden;
 }
@@ -21,30 +24,46 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
 }
 
 .main-card {
     width: 900px;
     height: 650px;
     position: relative;
-    background: linear-gradient(135deg, #0d4a3f 0%, #1a6b5a 25%, #2d8a6e 50%, #41a882 75%, #55c696 100%);
+    background-image: url('Card_BG.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transform: rotate(-2deg);
 }
 
+/* Add subtle pattern overlay */
+.main-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('SquareBG.png');
+    background-repeat: repeat;
+    background-size: 30px;
+    opacity: 0.1;
+    z-index: 1;
+}
+
 /* Main headline - the missing "¡OFERTA EXCLUSIVA!" */
 .main-headline {
     position: absolute;
-    top: 40px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 4.5em;
+    font-size: 4em;
     font-weight: 900;
     color: #ffd700;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     z-index: 15;
     white-space: nowrap;
     letter-spacing: 2px;
@@ -53,13 +72,13 @@ body {
 /* Registration text */
 .registration-text {
     position: absolute;
-    top: 120px;
+    top: 110px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     z-index: 14;
     white-space: nowrap;
 }
@@ -67,26 +86,26 @@ body {
 /* 3D Character - positioned on the left */
 .pan-image {
     position: absolute;
-    bottom: -50px;
-    left: -100px;
-    height: 500px;
+    bottom: -30px;
+    left: -80px;
+    height: 450px;
     width: auto;
     object-fit: contain;
     z-index: 10;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 /* Claim bonus button */
 .claim-button {
     position: absolute;
-    top: 180px;
+    top: 160px;
     left: 50%;
     transform: translateX(-50%);
-    width: 280px;
-    height: 80px;
+    width: 260px;
+    height: 70px;
     background: linear-gradient(145deg, #ffd700, #ffed4e);
     color: #000;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 900;
     border: none;
     border-radius: 15px;
@@ -94,7 +113,7 @@ body {
     text-align: center;
     line-height: 1.2;
     z-index: 13;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
 }
 
@@ -105,25 +124,25 @@ body {
 /* Right side content container */
 .right-content {
     position: absolute;
-    top: 280px;
-    right: 80px;
-    width: 320px;
+    top: 250px;
+    right: 60px;
+    width: 280px;
     z-index: 12;
 }
 
 /* Get spins button */
 .get-spins-button {
     width: 100%;
-    height: 70px;
+    height: 60px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-weight: 900;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
 }
 
@@ -135,15 +154,15 @@ body {
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .step-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -151,72 +170,73 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 900;
     border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .step-text {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 0.95em;
 }
 
-/* Floating coins */
+/* Floating coins - adjusted positioning */
 .coins-left {
     position: absolute;
-    top: 50px;
-    left: -50px;
-    height: 200px;
+    top: 80px;
+    left: -20px;
+    height: 160px;
     object-fit: contain;
     z-index: 8;
     transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
 }
 
 .coins-right {
     position: absolute;
-    top: 150px;
-    right: -30px;
-    height: 150px;
+    top: 120px;
+    right: -10px;
+    height: 120px;
     object-fit: contain;
     z-index: 8;
     transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
 }
 
-/* Bottom feature badges */
+/* Bottom feature badges - better spacing */
 .icons-bottom {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 60px;
+    padding: 0 40px;
     z-index: 11;
 }
 
 .icon-item {
-    background: rgba(26, 66, 58, 0.9);
+    background: rgba(26, 66, 58, 0.95);
     border: 2px solid #00d970;
-    border-radius: 12px;
-    padding: 12px 8px;
+    border-radius: 10px;
+    padding: 8px 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: #00d970;
-    font-size: 0.75em;
+    font-size: 0.7em;
     font-weight: bold;
     text-align: center;
-    min-width: 90px;
+    min-width: 80px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
 }
 
@@ -225,31 +245,31 @@ body {
 }
 
 .icon-item img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
     filter: brightness(1.2);
 }
 
 .icon-item p {
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 /* Social media icons */
 .social-icons {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 25px;
+    gap: 20px;
     z-index: 20;
 }
 
 .social-icon {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -269,51 +289,61 @@ body {
     }
     
     .main-headline {
-        font-size: 3.5em;
+        font-size: 3em;
     }
     
     .registration-text {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     
     .right-content {
-        right: 40px;
-        width: 280px;
+        right: 30px;
+        width: 250px;
+    }
+    
+    .pan-image {
+        height: 380px;
+        left: -60px;
     }
 }
 
 @media (max-width: 768px) {
     .main-headline {
-        font-size: 2.8em;
+        font-size: 2.4em;
     }
     
     .registration-text {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     
     .claim-button {
-        width: 240px;
-        height: 70px;
-        font-size: 1.2em;
+        width: 220px;
+        height: 60px;
+        font-size: 1.1em;
     }
     
     .right-content {
-        right: 20px;
-        width: 250px;
+        right: 15px;
+        width: 220px;
     }
     
     .icons-bottom {
-        padding: 0 20px;
+        padding: 0 15px;
     }
     
     .icon-item {
-        min-width: 70px;
-        padding: 8px 4px;
-        font-size: 0.65em;
+        min-width: 65px;
+        padding: 6px 4px;
+        font-size: 0.6em;
     }
     
     .icon-item img {
-        width: 28px;
-        height: 28px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .pan-image {
+        height: 320px;
+        left: -40px;
     }
 } 

@@ -25,10 +25,10 @@ body {
 
 .main-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     background: rgba(26, 74, 58, 0.9);
     border-radius: 20px;
-    padding: 30px 25px;
+    padding: 40px 35px 50px 35px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);

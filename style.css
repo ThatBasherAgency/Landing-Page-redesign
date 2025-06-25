@@ -9,150 +9,219 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial Black', Arial, sans-serif;
-    background-image: url('BGLandPage.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #1a4a3a 0%, #0d2818 100%);
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    padding: 20px;
 }
 
 .main-card {
-    width: 1000px;
-    height: 700px;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    background: linear-gradient(145deg, rgba(26, 74, 58, 0.95) 0%, rgba(13, 40, 24, 0.98) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     position: relative;
-    background-image: url('BGPan01 (1).png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 0;
-    overflow: visible;
-    box-shadow: none;
-    background-color: transparent;
-    transform: translateX(-30px);
+    overflow: hidden;
 }
 
-/* Remove casino table pseudo-element since it's now part of the main background */
+/* Decorative elements */
 .main-card::before {
-    display: none;
-}
-
-/* Add subtle pattern overlay on top */
-.main-card::after {
-    display: none;
-}
-
-/* Main headline - the missing "¡OFERTA EXCLUSIVA!" */
-.main-headline {
+    content: '';
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3.5em;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.main-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 127, 0.05) 0%, transparent 70%);
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
+
+/* Main headline */
+.main-headline {
+    font-size: 3.2em;
     font-weight: 900;
     color: #ffd700;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-    z-index: 15;
-    white-space: nowrap;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-align: center;
     letter-spacing: 2px;
+    z-index: 10;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Registration text */
 .registration-text {
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-    z-index: 14;
-    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    z-index: 10;
+    margin-bottom: 20px;
 }
 
-/* 3D Character - no longer needed since it's part of the background */
-.pan-image {
+/* Hide old images */
+.pan-image,
+.coins-left,
+.coins-right {
     display: none;
 }
 
-/* Claim bonus button - now styled as anchor */
+/* CTA Buttons Container */
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Claim bonus button */
 .claim-button {
-    position: absolute;
-    top: 140px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    height: 60px;
+    width: 100%;
+    max-width: 350px;
+    height: 70px;
     background: linear-gradient(145deg, #ffd700, #ffed4e);
     color: #000;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 900;
     border: none;
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
     line-height: 1.2;
-    z-index: 13;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.claim-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.claim-button:hover::before {
+    left: 100%;
 }
 
 .claim-button:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
 }
 
-/* Right side content container */
+/* Content area for right side elements */
+.content-area {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Right content reorganized */
 .right-content {
-    position: absolute;
-    top: 220px;
-    right: 80px;
-    width: 300px;
-    z-index: 12;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* Get spins button - now styled as anchor */
+/* Get spins button */
 .get-spins-button {
     width: 100%;
-    height: 55px;
+    height: 60px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 900;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.3);
+    transition: all 0.3s ease;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.get-spins-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.get-spins-button:hover::before {
+    left: 100%;
 }
 
 .get-spins-button:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 255, 127, 0.4);
 }
 
 /* Steps container */
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
 }
 
 .step-item {
@@ -160,271 +229,207 @@ body {
     align-items: center;
     gap: 15px;
     color: white;
-    font-size: 0.95em;
+    font-size: 1em;
     font-weight: bold;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.step-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
 }
 
 .step-number {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     background: linear-gradient(145deg, #00ff7f, #00d970);
     color: white;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 900;
     border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.3);
 }
 
 .step-text {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 0.95em;
+    flex: 1;
 }
 
-/* Floating coins - better positioned to avoid overlaps */
-.coins-left {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    height: 140px;
-    object-fit: contain;
-    z-index: 8;
-    transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-.coins-right {
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    height: 100px;
-    object-fit: contain;
-    z-index: 8;
-    transition: transform 0.1s ease-out;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-/* Bottom feature badges - more space from bottom */
+/* Feature badges */
 .icons-bottom {
-    position: absolute;
-    bottom: 50px;
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 80px;
-    z-index: 11;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    z-index: 10;
 }
 
 .icon-item {
-    background: rgba(26, 66, 58, 0.95);
+    background: rgba(26, 66, 58, 0.9);
     border: 2px solid #00d970;
-    border-radius: 10px;
-    padding: 10px 8px;
+    border-radius: 15px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: #00d970;
-    font-size: 0.75em;
+    font-size: 0.8em;
     font-weight: bold;
     text-align: center;
-    min-width: 85px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .icon-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    background: rgba(26, 66, 58, 1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .icon-item img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
     filter: brightness(1.2);
 }
 
 .icon-item p {
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
-/* Social media icons - moved further down */
+/* Social media icons */
 .social-icons {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 20px;
+    gap: 25px;
     z-index: 20;
+    padding: 20px 0;
 }
 
-/* Social media anchor tags */
 .social-icons a {
     text-decoration: none;
     display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     cursor: pointer;
-    transition: transform 0.2s ease;
-    filter: brightness(1.1);
+    transition: all 0.3s ease;
+    filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
 }
 
 .social-icons a:hover .social-icon {
-    transform: scale(1.2);
+    filter: brightness(1.3) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 }
 
-/* Mobile-First Responsive Design */
-
-/* Extra small devices (phones, up to 576px) */
-@media (max-width: 576px) {
-    body {
-        background: linear-gradient(135deg, #1a4a3a 0%, #0d2818 100%);
-        background-attachment: scroll;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
     .container {
-        width: 100%;
-        height: auto;
-        min-height: 100vh;
-        padding: 20px 15px;
+        padding: 15px;
         align-items: flex-start;
+        min-height: 100vh;
     }
     
     .main-card {
-        width: 100%;
-        height: auto;
-        min-height: auto;
-        background: none;
-        transform: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 30px 20px;
         gap: 25px;
+        min-height: auto;
+        border-radius: 15px;
     }
     
     .main-headline {
-        position: static;
-        transform: none;
         font-size: 2.2em;
-        text-align: center;
-        white-space: normal;
-        line-height: 1.1;
         letter-spacing: 1px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     
     .registration-text {
-        position: static;
-        transform: none;
-        font-size: 1em;
-        text-align: center;
-        white-space: normal;
+        font-size: 1.1em;
         margin-bottom: 15px;
     }
     
-    .claim-button {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: 300px;
-        height: 60px;
-        font-size: 1em;
-        margin: 0;
+    .cta-container {
+        max-width: 100%;
+        gap: 15px;
     }
     
-    .claim-button:hover {
-        transform: scale(1.02);
+    .claim-button {
+        height: 60px;
+        font-size: 1.1em;
+        max-width: 100%;
+    }
+    
+    .content-area {
+        gap: 25px;
+        max-width: 100%;
     }
     
     .right-content {
-        position: static;
-        width: 100%;
-        max-width: 300px;
-        margin: 0;
-        order: 1;
+        max-width: 100%;
+        gap: 20px;
     }
     
     .get-spins-button {
-        width: 100%;
         height: 55px;
-        font-size: 0.95em;
-        margin-bottom: 25px;
-    }
-    
-    .steps {
-        gap: 20px;
-        margin-bottom: 30px;
+        font-size: 1em;
     }
     
     .step-item {
+        padding: 12px;
         font-size: 0.9em;
-        gap: 15px;
-        justify-content: flex-start;
+        gap: 12px;
     }
     
     .step-number {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
         font-size: 1.1em;
-        flex-shrink: 0;
     }
     
     .step-text {
         font-size: 0.9em;
-        flex: 1;
-    }
-    
-    .coins-left,
-    .coins-right {
-        display: none;
     }
     
     .icons-bottom {
-        position: static;
-        width: 100%;
-        padding: 0;
-        margin: 20px 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        justify-items: center;
-        order: 2;
+        max-width: 100%;
     }
     
     .icon-item {
-        width: 100%;
-        max-width: 140px;
-        min-width: auto;
         padding: 15px 10px;
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
     
     .icon-item img {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
     }
     
     .social-icons {
-        position: static;
-        transform: none;
-        margin: 30px 0 0 0;
-        justify-content: center;
-        gap: 25px;
-        order: 3;
+        gap: 20px;
     }
     
     .social-icon {
@@ -433,290 +438,106 @@ body {
     }
 }
 
-/* Small devices (landscape phones, 577px to 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
-    body {
-        background: linear-gradient(135deg, #1a4a3a 0%, #0d2818 100%);
-        background-attachment: scroll;
-    }
-    
+@media (max-width: 480px) {
     .container {
-        padding: 25px 20px;
-        height: auto;
-        min-height: 100vh;
-        align-items: flex-start;
+        padding: 10px;
     }
     
     .main-card {
-        width: 100%;
-        height: auto;
-        background: none;
-        transform: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    
-    .main-headline {
-        position: static;
-        transform: none;
-        font-size: 2.8em;
-        text-align: center;
-    }
-    
-    .registration-text {
-        position: static;
-        transform: none;
-        font-size: 1.2em;
-        text-align: center;
-    }
-    
-    .claim-button {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: 350px;
-        height: 65px;
-        font-size: 1.1em;
-    }
-    
-    .claim-button:hover {
-        transform: scale(1.02);
-    }
-    
-    .right-content {
-        position: static;
-        width: 100%;
-        max-width: 350px;
-    }
-    
-    .get-spins-button {
-        height: 60px;
-        font-size: 1em;
-        margin-bottom: 25px;
-    }
-    
-    .coins-left,
-    .coins-right {
-        display: none;
-    }
-    
-    .icons-bottom {
-        position: static;
-        width: 100%;
-        padding: 0;
-        margin: 25px 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-    }
-    
-    .icon-item {
-        min-width: auto;
-        font-size: 0.65em;
-    }
-    
-    .social-icons {
-        position: static;
-        transform: none;
-        margin: 30px 0 0 0;
-        gap: 30px;
-    }
-}
-
-/* Medium devices (tablets, 769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .main-card {
-        width: 90vw;
-        height: 80vh;
-        min-height: 600px;
-    }
-    
-    .main-headline {
-        font-size: 2.8em;
-    }
-    
-    .registration-text {
-        font-size: 1.2em;
-    }
-    
-    .claim-button {
-        width: 230px;
-        height: 55px;
-        font-size: 1.05em;
-    }
-    
-    .right-content {
-        right: 50px;
-        width: 280px;
-    }
-    
-    .coins-left {
-        height: 120px;
-    }
-    
-    .coins-right {
-        height: 90px;
-    }
-    
-    .icons-bottom {
-        padding: 0 50px;
-    }
-    
-    .icon-item {
-        min-width: 80px;
-        font-size: 0.7em;
-    }
-}
-
-/* Large devices (desktops, 1025px to 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-    .main-card {
-        width: 95vw;
-        max-width: 1000px;
-        height: 85vh;
-        min-height: 650px;
-    }
-    
-    .coins-left {
-        height: 130px;
-    }
-    
-    .coins-right {
-        height: 95px;
-    }
-}
-
-/* Extra large devices (large desktops, 1441px and up) */
-@media (min-width: 1441px) {
-    .container {
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-    
-    .main-card {
-        width: 1000px;
-        height: 700px;
-    }
-}
-
-/* Landscape orientation for mobile devices */
-@media (max-width: 896px) and (orientation: landscape) and (max-height: 500px) {
-    body {
-        background: linear-gradient(135deg, #1a4a3a 0%, #0d2818 100%);
-    }
-    
-    .container {
-        padding: 15px;
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .main-card {
-        background: none;
-        transform: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 25px 15px;
         gap: 20px;
-        width: 100%;
-        height: auto;
     }
     
     .main-headline {
-        position: static;
         font-size: 1.8em;
-        text-align: center;
-        margin: 0;
     }
     
     .registration-text {
-        position: static;
-        font-size: 0.9em;
-        text-align: center;
-        margin: 0;
+        font-size: 1em;
     }
     
     .claim-button {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: 250px;
-        height: 50px;
-        font-size: 0.9em;
-    }
-    
-    .right-content {
-        position: static;
-        width: 100%;
-        max-width: 250px;
+        height: 55px;
+        font-size: 1em;
     }
     
     .get-spins-button {
-        height: 45px;
-        font-size: 0.85em;
-        margin-bottom: 15px;
-    }
-    
-    .steps {
-        gap: 12px;
+        height: 50px;
+        font-size: 0.95em;
     }
     
     .step-item {
-        font-size: 0.75em;
-        gap: 10px;
+        padding: 10px;
+        font-size: 0.85em;
     }
     
     .step-number {
-        width: 25px;
-        height: 25px;
-        font-size: 0.9em;
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
     }
     
     .icons-bottom {
-        position: static;
-        margin: 15px 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        padding: 0;
+        gap: 12px;
     }
     
     .icon-item {
-        min-width: auto;
-        padding: 8px 4px;
-        font-size: 0.55em;
+        padding: 12px 8px;
+        font-size: 0.7em;
     }
     
     .icon-item img {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .social-icons {
-        position: static;
-        transform: none;
-        margin: 15px 0 0 0;
-        gap: 20px;
+        width: 26px;
+        height: 26px;
     }
     
     .social-icon {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .coins-left,
-    .coins-right {
-        display: none;
+        width: 32px;
+        height: 32px;
     }
 }
 
-/* High DPI / Retina displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+/* Desktop enhancements */
+@media (min-width: 1200px) {
     .main-card {
-        background-size: cover;
+        padding: 50px;
+        gap: 35px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .main-headline {
+        width: 100%;
+        font-size: 3.5em;
+    }
+    
+    .registration-text {
+        width: 100%;
+        font-size: 1.4em;
+    }
+    
+    .cta-container {
+        flex: 1;
+        min-width: 350px;
+        max-width: 400px;
+    }
+    
+    .content-area {
+        flex: 1;
+        min-width: 400px;
+        max-width: 500px;
+    }
+    
+    .icons-bottom {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+    }
+    
+    .social-icons {
+        width: 100%;
+        justify-content: center;
     }
 } 

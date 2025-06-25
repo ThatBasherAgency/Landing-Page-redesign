@@ -285,17 +285,224 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+
+/* Extra small devices (phones, up to 576px) */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        padding: 10px;
+    }
+    
+    .main-card {
+        width: 100%;
+        height: auto;
+        min-height: 90vh;
+        transform: translateX(0);
+        padding: 20px 15px;
+        background-position: center top;
+        background-size: contain;
+    }
+    
+    .main-headline {
+        font-size: 1.8em;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        white-space: normal;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+    
+    .registration-text {
+        font-size: 0.9em;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        white-space: normal;
+        padding: 0 10px;
+    }
+    
+    .claim-button {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 280px;
+        height: 50px;
+        font-size: 0.95em;
+        margin: 20px auto;
+        display: flex;
+    }
+    
+    .right-content {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    
+    .get-spins-button {
+        width: 100%;
+        height: 50px;
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+    
+    .steps {
+        gap: 20px;
+    }
+    
+    .step-item {
+        font-size: 0.85em;
+        gap: 12px;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+    }
+    
+    .step-text {
+        font-size: 0.85em;
+    }
+    
+    .coins-left,
+    .coins-right {
+        display: none; /* Hide decorative coins on mobile for cleaner look */
+    }
+    
+    .icons-bottom {
+        position: relative;
+        bottom: auto;
+        margin-top: 30px;
+        padding: 0 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .icon-item {
+        min-width: 80px;
+        padding: 8px 6px;
+        font-size: 0.6em;
+        flex: 1 1 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+    }
+    
+    .icon-item img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .social-icons {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Small devices (landscape phones, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-card {
+        width: 100%;
+        height: auto;
+        min-height: 85vh;
+        transform: translateX(0);
+        padding: 25px 20px;
+    }
+    
+    .main-headline {
+        font-size: 2.2em;
+        top: 20px;
+    }
+    
+    .registration-text {
+        font-size: 1.1em;
+        top: 80px;
+    }
+    
+    .claim-button {
+        top: 130px;
+        width: 220px;
+        height: 55px;
+        font-size: 1em;
+    }
+    
+    .right-content {
+        top: 200px;
+        right: 30px;
+        width: 250px;
+    }
+    
+    .get-spins-button {
+        height: 50px;
+        font-size: 0.95em;
+    }
+    
+    .coins-left {
+        height: 100px;
+        top: 40px;
+        left: 10px;
+    }
+    
+    .coins-right {
+        height: 80px;
+        top: 70px;
+        right: 10px;
+    }
+    
+    .icons-bottom {
+        bottom: 40px;
+        padding: 0 30px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .icon-item {
+        min-width: 75px;
+        padding: 8px 6px;
+        font-size: 0.65em;
+        flex: 1 1 calc(25% - 6px);
+    }
+    
+    .icon-item img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Medium devices (tablets, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
     .main-card {
         width: 90vw;
         height: 80vh;
-    }
-    
-    .main-card::before {
-        width: 320px;
-        height: 220px;
-        bottom: 130px;
-        left: -15px;
+        min-height: 600px;
     }
     
     .main-headline {
@@ -306,67 +513,136 @@ body {
         font-size: 1.2em;
     }
     
-    .right-content {
-        right: 40px;
-        width: 260px;
+    .claim-button {
+        width: 230px;
+        height: 55px;
+        font-size: 1.05em;
     }
     
-    .pan-image {
-        height: 340px;
-        left: 15px;
-        bottom: 130px;
+    .right-content {
+        right: 50px;
+        width: 280px;
+    }
+    
+    .coins-left {
+        height: 120px;
+    }
+    
+    .coins-right {
+        height: 90px;
     }
     
     .icons-bottom {
-        padding: 0 40px;
+        padding: 0 50px;
+    }
+    
+    .icon-item {
+        min-width: 80px;
+        font-size: 0.7em;
     }
 }
 
-@media (max-width: 768px) {
-    .main-card::before {
-        width: 260px;
-        height: 180px;
-        bottom: 110px;
-        left: -10px;
+/* Large devices (desktops, 1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .main-card {
+        width: 95vw;
+        max-width: 1000px;
+        height: 85vh;
+        min-height: 650px;
+    }
+    
+    .coins-left {
+        height: 130px;
+    }
+    
+    .coins-right {
+        height: 95px;
+    }
+}
+
+/* Extra large devices (large desktops, 1441px and up) */
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    .main-card {
+        width: 1000px;
+        height: 700px;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 896px) and (orientation: landscape) {
+    .main-card {
+        height: auto;
+        min-height: 90vh;
+        padding: 15px;
     }
     
     .main-headline {
-        font-size: 2.2em;
+        font-size: 1.6em;
+        top: 10px;
     }
     
     .registration-text {
-        font-size: 1em;
+        font-size: 0.85em;
+        top: 50px;
     }
     
     .claim-button {
+        top: 80px;
         width: 200px;
-        height: 50px;
-        font-size: 1em;
+        height: 45px;
+        font-size: 0.9em;
     }
     
     .right-content {
+        top: 140px;
         right: 20px;
         width: 220px;
     }
     
+    .get-spins-button {
+        height: 45px;
+        font-size: 0.85em;
+    }
+    
+    .step-item {
+        font-size: 0.75em;
+    }
+    
     .icons-bottom {
+        bottom: 20px;
         padding: 0 20px;
     }
     
     .icon-item {
-        min-width: 70px;
-        padding: 8px 6px;
-        font-size: 0.65em;
+        min-width: 65px;
+        padding: 6px 4px;
+        font-size: 0.55em;
     }
     
     .icon-item img {
-        width: 26px;
-        height: 26px;
+        width: 20px;
+        height: 20px;
     }
     
-    .pan-image {
-        height: 280px;
-        left: 10px;
-        bottom: 110px;
+    .social-icons {
+        bottom: 5px;
+        gap: 12px;
+    }
+    
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .main-card {
+        background-size: cover;
     }
 } 

@@ -85,18 +85,12 @@ body {
     display: none;
 }
 
-/* Anchor tag wrapper for claim button */
-.main-card > a {
+/* Claim bonus button - now styled as anchor */
+.claim-button {
     position: absolute;
     top: 140px;
     left: 50%;
     transform: translateX(-50%);
-    text-decoration: none;
-    z-index: 13;
-}
-
-/* Claim bonus button */
-.claim-button {
     width: 250px;
     height: 60px;
     background: linear-gradient(145deg, #ffd700, #ffed4e);
@@ -108,12 +102,17 @@ body {
     cursor: pointer;
     text-align: center;
     line-height: 1.2;
+    z-index: 13;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.main-card > a:hover .claim-button {
-    transform: scale(1.05);
+.claim-button:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
 /* Right side content container */
@@ -125,14 +124,7 @@ body {
     z-index: 12;
 }
 
-/* Anchor tag wrapper for get spins button */
-.right-content > a {
-    text-decoration: none;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Get spins button */
+/* Get spins button - now styled as anchor */
 .get-spins-button {
     width: 100%;
     height: 55px;
@@ -143,11 +135,16 @@ body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
+    margin-bottom: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.right-content > a:hover .get-spins-button {
+.get-spins-button:hover {
     transform: scale(1.05);
 }
 

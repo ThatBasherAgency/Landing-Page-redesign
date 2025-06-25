@@ -180,10 +180,14 @@ body {
 
 /* Social icons */
 .social-icons {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    z-index: 20;
+    margin: 0;
 }
 
 .social-icons a {
@@ -544,7 +548,7 @@ body {
     /* Move social icons outside the main card - positioned relative to container */
     .social-icons {
         position: absolute;
-        bottom: 10px;
+        bottom: -50px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;

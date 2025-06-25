@@ -17,7 +17,7 @@ body {
 .container {
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 20px 20px 80px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,7 +182,7 @@ body {
 /* Social icons */
 .social-icons {
     position: absolute;
-    bottom: -40px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

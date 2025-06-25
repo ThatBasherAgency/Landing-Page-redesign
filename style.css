@@ -308,6 +308,7 @@ body {
         text-align: left;
         position: relative;
         display: block;
+        border: none;
     }
     
     /* Restore original headline positioning */
@@ -538,10 +539,10 @@ body {
         line-height: 1.1;
     }
     
-    /* Restore original social icons */
+    /* Move social icons inside the main card */
     .social-icons {
         position: absolute;
-        bottom: 10px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;

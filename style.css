@@ -21,14 +21,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .main-card {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     background: rgba(26, 74, 58, 0.9);
     border-radius: 20px;
-    padding: 40px 35px 50px 35px;
+    padding: 30px 25px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -181,7 +182,7 @@ body {
 /* Social icons */
 .social-icons {
     position: absolute;
-    bottom: -50px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -217,6 +218,7 @@ body {
 @media (min-width: 768px) {
     .container {
         padding: 40px;
+        position: relative;
     }
     
     .main-card {

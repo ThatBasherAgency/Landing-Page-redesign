@@ -344,17 +344,19 @@ body {
         text-align: center;
     }
     
-    /* Hide mobile containers */
+    /* Show the CTA container on desktop */
     .cta-container {
-        display: none;
-    }
-    
-    /* Restore original claim button */
-    .claim-button {
+        display: block;
         position: absolute;
         top: 140px;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 13;
+    }
+    
+    /* Restore original claim button */
+    .claim-button {
+        position: static;
         width: 250px;
         height: 60px;
         background: linear-gradient(145deg, #ffd700, #ffed4e);
@@ -366,7 +368,6 @@ body {
         cursor: pointer;
         text-align: center;
         line-height: 1.2;
-        z-index: 13;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         transition: transform 0.2s ease;
         text-decoration: none;
@@ -375,10 +376,11 @@ body {
         justify-content: center;
         margin: 0;
         padding: 0;
+        transform: none;
     }
     
     .claim-button:hover {
-        transform: translateX(-50%) scale(1.05);
+        transform: scale(1.05);
     }
     
     /* Restore original content area */
@@ -539,10 +541,10 @@ body {
         line-height: 1.1;
     }
     
-    /* Move social icons inside the main card */
+    /* Move social icons outside the main card - positioned relative to container */
     .social-icons {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
